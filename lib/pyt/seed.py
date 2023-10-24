@@ -39,7 +39,7 @@ def create_records():
 
     # equipment
     equipment_types = ["Scrubbing-machine", "Vaccum-sucker", "Pressure-washer", "Telescopic-pole", "Mops", "Squee-gee", "soft-brush", "Glass-cleaner", "Drain-rods", "Truck", "Grass-Trimer", "Scaffolding", "K-rod"]
-    equipments = [Instrument(
+    equipments = [Equipment(
         type = rc(equipment_types),
         user_id = fake.random_int(min=1, max=60)
     ) for i in range(60)]
@@ -50,8 +50,8 @@ def create_records():
 
 def relate_records(users, areas, equipments):
     for user in users:
-        users.area = rc(areas)
-        users.equipment = rc(equipments)
+        user.area = rc(areas)
+        user.equipment = rc(equipments)
     
     session.add_all(users)
     session.commit()

@@ -1,7 +1,6 @@
-from datetime import datetime
 
 from sqlalchemy.orm import relationship, backref
-from sqlalchemy import PrimaryKeyConstraint, Column, DateTime, Integer, String, MetaData, ForeignKey
+from sqlalchemy import PrimaryKeyConstraint, Column, Integer, String, MetaData, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
 
 
@@ -52,7 +51,7 @@ class User(Base):
     last_name = Column(String())
     gender = Column(String())
     position = Column(String())
-    created = Column(DateTime, default=datetime.utcnow)
+
     
     equipments = relationship("Equipment", backref=backref('user'))
     areas = relationship("Area", backref=backref('user'))
@@ -61,9 +60,8 @@ class User(Base):
         return f'Id: {self.id} ' \
         + f'First Name: {self.first_name} ' \
         + f'Last Name: {self.last_name} ' \
-        + f'Gender: {self.gender}'\
-        + f'Position: {self.position} ' \
-        + f'Created: {self.created}'
+        + f'Gender: {self.gender}' \
+        + f'Position: {self.position} '
 
     def test(session, last_name):
         user = session.query(User).filter(User.last_name == last_name).first()

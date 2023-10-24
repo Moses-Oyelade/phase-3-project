@@ -9,8 +9,6 @@ from pyt.main import Equipment, Area, User
 from subfunctions.function1 import (function1a, function1b, function1c)
 from subfunctions.function2 import (function2a, function2b)
 from subfunctions.function3 import (function3a, function3b)
-from subfunctions.function4 import (function4a, function4b, function4c, function4d)
-from subfunctions.function5 import (function5a, function5b, function5c)
 
 class Cli:
     def __init__(self):
@@ -32,8 +30,6 @@ class Cli:
             print("Press S to search the database.")
             print("Press P to print records.")
             print("Press C to create new data entries.")
-            # print("Press U to update database entries.")
-            # print("Press D to delete database entries.")
             print(" ")
             print("Press Q to quit.")
             print(" ")
@@ -44,10 +40,6 @@ class Cli:
                 Cli.function2(self, user_choice)
             elif user_choice == "C" or user_choice == "c":
                 Cli.function3(self, user_choice)
-            # elif user_choice == "U" or user_choice == "u":
-            #     Cli.function4(self, user_choice)
-            # elif user_choice == "D" or user_choice == "d":
-            #     Cli.function5(self, user_choice)
             elif user_choice == "Q":
                 break
             else:
@@ -124,7 +116,7 @@ class Cli:
     
    
 if __name__ == "__main__":
-    engine = create_engine("sqlite:///db/band_lockers.db")
+    engine = create_engine("sqlite:///pyt/klinint_users.db")
     session = Session(engine, future=True)
     Cli()
 
