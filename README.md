@@ -1,27 +1,25 @@
-# BANDO - An Instrument Locker CLI
+# (KLiN'iT CLI)
+#### Date, 2023/10/24
+#### By *Moses O. Oyelade*
 
-As a former music teacher, one of the biggest organizational challenges was keeping track of locker and instrument assignments for my band students. Some of the biggest issues included:
+# KLiN'iT - A Company User-manager CLI
+As a former site-Manager, one of the biggest organizational challenges was keeping track of the activies of workers per time. Some of the biggest issues included:
 
-* Students constantly forgetting or misplacing their locker combinations
-* Needing to get into a students' locker if they are absent to access their music
-* Having to print a hard copy of the locker inventory and start fresh every year
-* Tracking an instrument inventory separately from the locker inventory
+* Hygiene-clerk(worker) constantly forgetting or misplacing their tools and materials
+* Needing to access the tool and materials for inspection
+* Having to get the total stock of consumables and materials
+* Tracking a tool inventory separately from area of activity
 
-BANDO is a Command Line Interface allowing users to query from a SQLAlchemy database of instruments, lockers, and students. The database is set up with many-to-many relationships backrefered through the student table. Students can have many instruments and students can have many lockers.
+KLiN'iT is a Command Line Interface allowing users to query from a SQLAlchemy database of users(workers), Area of activities, Tools and materials. The database is set up with many-to-many relationships backrefered through the user table. Users can have many Tools and Users can have many areas of activities.
 
-BANDO allows the user to complete full CRUD actions through the CLI. The main menu options include:
+The main menu options include:
 
 * Search the database
 * Print records from the database
 * Create new records
-* Update existing records
-* Delete records from the database
 
-This CLI is set up specifically for HIGH SCHOOL BAND student data, but could be adapted for other grade levels or educational disciplines.
+This CLI is set up specifically for CLEANING FIRMS user/worker data, but could be adapted for other industries.
 
-## Walkthrough
-
-<a href="https://www.youtube.com/watch?v=jzYhgUnqOOo" title="Locker Inventory CLI Walkthrough"><img src="./images/cli-play.jpeg" height="200px" alt="Locker Inventory CLI Walkthrough" /></a>
 
 ## Installation
 
@@ -33,16 +31,16 @@ In order to seed the database, run the following commands:
 
 ```python
 cd lib
-cd db
+cd pyt
 python seed.py
 ```
 
 ### Run CLI
 
-CD back to the lib folder, then run the following command:
+cd back to the lib folder, then run the following command:
 
 ```python
-./bando.py
+./klinit.py
 ```
 
 You can now access and interact with the data from the database through the CLI.
@@ -75,6 +73,9 @@ Each of the helper functions in the subfunctions folder import the necessary mod
 
 To learn more about querying using SQLAlchemy: [SQLAlchemy Documentation](https://www.sqlalchemy.org/)
 
+Check out Faker for all of your database seeding needs: [Faker Documentation](https://faker.readthedocs.io/en/master/)
+
+Do your tables look awful? Check out Pandas to learn how to pretty-print your data! [Pandas Documentation](https://pandas.pydata.org/)
 
 Test out user input verification: [Regex101](https://regex101.com/)
 
