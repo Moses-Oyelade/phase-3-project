@@ -3,10 +3,10 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 
-from main import (Locker, Instrument, Student)
+from main import (Area, Equipment, User)
 
 if __name__ == '__main__':
-    engine = create_engine("sqlite:///band_lockers.db")
+    engine = create_engine("sqlite:///main.db")
     session = Session(engine, future=True)
 
 

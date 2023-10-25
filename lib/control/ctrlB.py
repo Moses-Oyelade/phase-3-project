@@ -1,4 +1,4 @@
-from pyt.main import User, Equipment
+from byt.main import User, Equipment
 import pandas
 
 def function2a(session, search_option):

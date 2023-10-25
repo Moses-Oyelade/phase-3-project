@@ -4,11 +4,11 @@ import os, shutil
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
-from pyt.main import Equipment, Area, User
+from byt.main import Equipment, Area, User
 
-from subfunctions.function1 import (function1a, function1b, function1c)
-from subfunctions.function2 import (function2a, function2b)
-from subfunctions.function3 import (function3a, function3b)
+from control.ctrlA import (function1a, function1b, function1c)
+from control.ctrlB import (function2a, function2b)
+from control.ctrlC import (function3a, function3b)
 
 class Cli:
     def __init__(self):
@@ -116,7 +116,7 @@ class Cli:
     
    
 if __name__ == "__main__":
-    engine = create_engine("sqlite:///pyt/klinint_users.db")
+    engine = create_engine("sqlite:///byt/main.db")
     session = Session(engine, future=True)
     Cli()
 

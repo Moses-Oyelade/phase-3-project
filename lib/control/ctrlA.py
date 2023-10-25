@@ -1,4 +1,4 @@
-from pyt.main import Area, User, Equipment
+from byt.main import Area, User, Equipment
 import inquirer
 import pandas
 import re

@@ -1,4 +1,4 @@
-from pyt.main import User, Equipment
+from byt.main import User, Equipment
 
 def function3a(session, search_option):
     print(" ")
@@ -33,7 +33,7 @@ def function3a(session, search_option):
                 print(f"You entered position: {position}, which is an invalid option.")
                 print("Please enter Supervisor, Team lead or Hygiene-clerk for position.")
 
-def add_student(session, user):
+def add_user(session, user):
     session.add(user)
     session.commit()
 

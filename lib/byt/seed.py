@@ -8,7 +8,7 @@ from main import (Area, Equipment, User)
 fake = Faker()
 
 
-engine = create_engine("sqlite///klinint_users.db")
+engine = create_engine("sqlite:///main.db")
 session = Session(engine, future=True)
 
 def delete_records():
