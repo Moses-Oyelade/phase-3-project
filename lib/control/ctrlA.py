@@ -36,7 +36,7 @@ def print_combo_by_last_name(session, last_name):
                 print("The selected employee works at the following area(s) assigned: ")
                 print(" ")
                 for combo in user_combos:
-                    print(f'Area: {combo.duty} Location: {combo.loccation}')
+                    print(f'Area: {combo.duty} Location: {combo.location}')
             else:
                 print(f"Last Name: {last_name} | This employee does not have any area assigned.")
         else:
