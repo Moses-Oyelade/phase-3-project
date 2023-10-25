@@ -1,5 +1,5 @@
 from byt.main import User, Equipment
-import pandas
+
 
 def function2a(session, search_option):
     print(" ")
@@ -21,8 +21,8 @@ def function2a(session, search_option):
 def print_users_by_position(session, position):
     users = (session.query(User).filter(User.position == position)).all()
     user_data = ([(user.first_name, user.last_name) for user in users])
-    df = (pandas.DataFrame(user_data, columns=["First Name", "Last Name"]))
-    print(df.__str__(index=False))
+    # df = (pandas.DataFrame(user_data, columns=["First Name", "Last Name"]))
+    print(user_data)
 
 def count_users_by_position(session, position):
     position_count = (session.query(User).filter(User.position == position).count())
