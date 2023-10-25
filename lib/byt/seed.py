@@ -26,7 +26,7 @@ def create_records():
             first_name=f'{fake.first_name()}',
             last_name=f'{fake.last_name()}',
             gender=rc(gender),
-            position=rc(position, position)
+            position=rc(position)
         ) for i in range(60)]
 
     # area or duty location 
