@@ -21,7 +21,7 @@ def create_records():
     # Klin'iT_users
     gender = ["M","F"]
     position = ["Supervisor", "Team lead", "Hygiene-clerk"]
-    while len(position[0]) == 10 and len(position[1]) ==20 :
+    while len(position[0]) == range(10) and len(position[1]) == range(20) :
         users = [User(
             first_name=f'{fake.first_name()}',
             last_name=f'{fake.last_name()}',
@@ -30,7 +30,7 @@ def create_records():
         ) for i in range(60)]
 
     # area or duty location 
-    duty = ["Morning", "Afternoon", "Night"]
+    duty = ["Morning", "Afternoon", "Night", "Off-duty"]
     location = ["Factory A", "Factory B", "Factory C", "Office", "Loading-bay", "Restroom", "Reception", "Warehouse", "Canteen", "External"]
     areas = [Area(
         duty = rc(duty),
