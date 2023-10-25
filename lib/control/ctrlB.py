@@ -19,7 +19,7 @@ def function2a(session, search_option):
             print(f"You entered: {position}, which is invalid. Please enter Supervisor, Team lead or Hygiene-clerk to print employees by position.")
 
 def print_users_by_position(session, position):
-    users = (session.query(User).filter(User.grade_level == position)).all()
+    users = (session.query(User).filter(User.position == position)).all()
     user_data = ([(user.first_name, user.last_name) for user in users])
     df = (pandas.DataFrame(user_data, columns=["First Name", "Last Name"]))
     print(df.__str__(index=False))
