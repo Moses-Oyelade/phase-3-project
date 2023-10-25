@@ -135,7 +135,8 @@ def find_by_last_name(session, last_name):
     users = (session.query(User).filter(User.last_name == last_name).all())
     if users:
         user_data = ([(user.last_name, user.first_name, user.position) for user in users])
-        df = (pandas.DataFrame(user_data, columns=["Last Name", "First Name", "Gender"]))
-        print(df.__str__(index=False))
+        # df = (pandas.DataFrame(user_data, columns=["Last Name", "First Name", "Gender"]))
+        # print(df.__str__(index=False))
+        print(user_data)
     else:
         print(f"Last Name: {last_name} | There is no employee matching this name in the database.")
