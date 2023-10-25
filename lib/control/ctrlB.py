@@ -22,11 +22,11 @@ def print_users_by_position(session, position):
     users = (session.query(User).filter(User.grade_level == position)).all()
     user_data = ([(user.first_name, user.last_name) for user in users])
     df = (pandas.DataFrame(user_data, columns=["First Name", "Last Name"]))
-    print(df.to_string(index=False))
+    print(df.__str__(index=False))
 
 def count_users_by_position(session, position):
     position_count = (session.query(User).filter(User.position == position).count())
-    print(f"There are {position_count} employee(s) in grade {position}.")
+    print(f"There are {position_count} employee(s) who are {position}.")
 
 def function2b(session, search_option):
     print(" ")

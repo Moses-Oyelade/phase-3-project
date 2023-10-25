@@ -10,24 +10,25 @@ def function3a(session, search_option):
             break
         else:
             first_name = input("Enter employee first name: ")
+            gender = input("Enter employee gender: ")
             position = input("Enter employee position: ")
             if position == "Supervisor" or position == "Team lead" or position == "Hygiene-clerk":
                 print(" ")
-                print(f"Last Name: {last_name} | First Name: {first_name} | Position: {position}")
+                print(f"Last Name: {last_name} | First Name: {first_name} | Gender: {gender} | Position: {position}")
                 print(" ")
                 confirm = input("Confirm add above employee to database? n/Y: ")
                 if confirm == "n":
                     print(" ")
                     print("Employee NOT added to database.")
                 elif confirm == "Y":
-                    add_user(session, User(first_name=first_name, last_name=last_name, potision=position))
+                    add_user(session, User(first_name=first_name, last_name=last_name, gender=gender, potision=position))
                     print(" ")
                     print("New employee successfully added to database!")
                 elif confirm == "Q":
                     break
                 else:
                     print (" ")
-                    print("Invalid entry. Please enter n/Y or press Q to exit to main menu.")
+                    print("Invalid entry! Please enter n/Y or press Q to exit to main menu.")
             else:
                 print(" ")
                 print(f"You entered position: {position}, which is an invalid option.")

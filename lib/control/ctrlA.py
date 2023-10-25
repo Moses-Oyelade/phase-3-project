@@ -10,7 +10,7 @@ def function1a(session, search_option):
         print(" ")
         combo_search = input("Enter duty or employee last name: ")
         print(" ")
-        int_pattern = r'\d'
+        int_pattern = r"[a-zA-Z]"
         regex = re.compile(int_pattern)
         match = regex.search(combo_search)
         if combo_search == "Q":
@@ -18,12 +18,12 @@ def function1a(session, search_option):
         elif match:
             print_combo_by_area_duty(session, area_duty=combo_search)
         elif not match:
-            print_combo_by_area_duty(session, area_duty=combo_search)
+            print_combo_by_last_name(session, last_name=combo_search)
 
 def print_combo_by_area_duty(session, area_duty):
     combo = session.query(Area).filter(Area.duty == area_duty).first()
     if combo:
-        print(f'Area: {combo.duty} Location: {combo.duty}')
+        print(f'Area: {combo.duty} Location: {combo.location}')
     else:
         print("There is no matching Area duty in the database.")
 
@@ -53,7 +53,7 @@ def print_combo_by_last_name(session, last_name):
                               ),
                               ]
             answers = inquirer.prompt(questions)
-            selection = answers['employee']
+            selection = answers['employees']
 
             user_combos = (session.query(Area).join(User).where(User.id == Area.user_id).filter(Area.user_id == selection).all())
             if user_combos:
@@ -134,8 +134,8 @@ def function1c(session, search_option):
 def find_by_last_name(session, last_name):
     users = (session.query(User).filter(User.last_name == last_name).all())
     if users:
-        user_data = ([(user.last_name, user.first_name, user.grade_level) for user in users])
+        user_data = ([(user.last_name, user.first_name, user.position) for user in users])
         df = (pandas.DataFrame(user_data, columns=["Last Name", "First Name", "Gender"]))
-        print(df.to_string(index=False))
+        print(df.__str__(index=False))
     else:
         print(f"Last Name: {last_name} | There is no employee matching this name in the database.")
