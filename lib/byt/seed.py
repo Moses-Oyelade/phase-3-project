@@ -21,8 +21,7 @@ def create_records():
     # Klin'iT_users
     gender = ["M","F"]
     position = ["Supervisor", "Team lead", "Hygiene-clerk"]
-    while len(position[0]) == range(10) and len(position[1]) == range(20) :
-        users = [User(
+    users = [User(
             first_name=f'{fake.first_name()}',
             last_name=f'{fake.last_name()}',
             gender=rc(gender),
